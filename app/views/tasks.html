@@ -1,0 +1,28 @@
+<div class="container-fluid" ng-controller="tasksCtrl">
+    <div class="row">
+        <div class="task center-block col-md-4" style="float: none;margin-bottom: 20px;padding: 10px" ng-repeat="task in tasks | filter : { obj_status:'active'}">
+            <a ng-href="./index.html#/task/{{task.id}}"> <h3 ng-class="{'text-bold' : task.is_high_priority }" ng-click="">{{task.name}}</h3></a>
+            <div class="tab-40">
+                <div class="tags" ng-show="task.tags">
+                    Теги:
+                    <span  ng-repeat="tag in task.tags">{{tag}}{{$last ? '' : ', '}}</span>
+                </div>
+                <span ng-show="task.actual_effort">
+                    Потраченое время: {{task.actual_effort}}
+                    <br>
+                </span>
+                <span ng-show="task.estimated_effort">
+                    Общая оценка задачи: {{task.estimated_effort}}
+                    <br>
+                </span>
+                <span ng-show="task.due_date">
+                    Дата окончания: {{task.due_date | date:'medium'}}
+                    <br>
+                </span>
+                <span ng-show="task.description">
+                    Описание: <br> <span class="tab-20">{{task.description}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

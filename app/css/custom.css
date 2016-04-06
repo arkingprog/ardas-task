@@ -1,0 +1,15 @@
+
+.text-bold{
+    font-weight: bold;
+    font-size: x-large;
+}
+.task{
+    background: #eee;
+    border-radius: 15px 15px 15px 15px;
+}
+.tab-40{
+    padding-left: 40px
+}
+.tab-20{
+    padding-left: 20px
+}

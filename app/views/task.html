@@ -1,0 +1,30 @@
+<div class="container-fluid" ng-controller="taskCtrl">
+    <div class="row">
+        <div style="width: 30%;margin: 0 auto;">
+            <h2 class="text-center" ng-class="{'text-bold' : task.is_high_priority }" editable-text="task.name" onaftersave="updateTask(task.id,task.name)">{{task.name}}</h2>
+        </div>
+        <div class="center-block task col-md-4" style="float: none;margin-bottom: 20px">
+            <div class="tab-40">
+                <div class="tags" ng-show="task.tags">
+                    Теги:
+                        <span  ng-repeat="tag in task.tags">{{tag}}{{$last ? '' : ', '}}</span>
+                </div>
+                <span ng-show="task.actual_effort">
+                    Потраченое время: {{task.actual_effort}}
+                    <br>
+                </span>
+                <span ng-show="task.estimated_effort">
+                    Общая оценка задачи: {{task.estimated_effort}}
+                    <br>
+                </span>
+                <span ng-show="task.due_date">
+                    Дата окончания: {{task.due_date | date:'medium'}}
+                    <br>
+                </span>
+                <span ng-show="task.description">
+                    Описание: <br> <span style="word-wrap: break-word"  class="tab-20">{{task.description}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
