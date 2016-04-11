@@ -1,6 +1,6 @@
 (function(){
     'use strict'
-    angular.module('todoApp',['ngRoute',"xeditable"])
+    angular.module('todoApp',['ngRoute'])
         .config(function($routeProvider){
             $routeProvider
                 .when('/tasks',
@@ -17,7 +17,5 @@
                     redirectTo:'/tasks'
                 });
         })
-        .run(function(editableOptions) {
-            editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-    });
+
 })();

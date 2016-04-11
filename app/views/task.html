@@ -1,7 +1,6 @@
 <div class="container-fluid" ng-controller="taskCtrl">
     <div class="row">
         <div  class="center-block col-md-4" style="float: none;">
-            <!--h2 class="text-center" ng-class="{'text-bold' : task.is_high_priority }" editable-text="task.name" onaftersave="updateTask(task.id,task.name)">{{task.name}}</h2-->
             <h3 class="text-center" ng-class="{'text-bold' : task.is_high_priority }" ng-click="editable()" ng-hide="isEditableTask" >{{task.name}}</h3>
             <div ng-show="isEditableTask">
                 <input  type="text" ng-model="task.name"/>
